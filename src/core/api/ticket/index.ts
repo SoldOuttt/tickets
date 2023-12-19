@@ -22,6 +22,18 @@ const dynamicBaseQuery: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryE
     return rawBaseQuery(args, WebApi, extraOptions);
 };
 
+function padTo2Digits(num: number) {
+    return num.toString().padStart(2, '0');
+}
+
+function formatDate(date: Date) {
+    return (
+        [date.getFullYear(), padTo2Digits(date.getMonth() + 1), padTo2Digits(date.getDate())].join('-') +
+        ' ' +
+        [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes()), padTo2Digits(date.getSeconds())].join(':')
+    );
+}
+
 export const ticketApi = createApi({
     reducerPath: 'ticketApi',
     tagTypes: ['Ticket'],
@@ -53,7 +65,7 @@ export const ticketApi = createApi({
                     event: {
                         name: 'event',
                     },
-                    creationDate: new Date(),
+                    creationDate: formatDate(new Date()),
                 },
             }),
             invalidatesTags: [{ type: 'Ticket', id: 'LIST' }],
