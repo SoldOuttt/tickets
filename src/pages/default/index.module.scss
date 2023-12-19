@@ -1,0 +1,6 @@
+.wrapper {
+  @apply py-12 container max-w-7xl
+}
+.ticketsContainer {
+  @apply flex flex-row flex-wrap gap-4 mt-10
+}

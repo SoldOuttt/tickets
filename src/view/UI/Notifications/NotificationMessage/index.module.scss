@@ -1,0 +1,80 @@
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.outer-container {
+    height: fit-content;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.container {
+    position: relative;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 12%), 0 0 8px rgb(0 0 0 / 24%);
+    max-width: 400px;
+    cursor: default;
+    transition: transform 0.3s ease-out;
+}
+
+.container.slideIn {
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+.container.slideOut {
+    transform: translateX(150%);
+    flex: 0;
+}
+
+.outer-container.slideIn {
+    max-height: 0;
+}
+
+.outer-container.slideOut {
+    max-height: 0;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    width: 100%;
+}
+
+.icon {
+    font-size: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.title-text {}
+
+.body {
+    margin-left: 34px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.close-icon {}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 8px 0;
+    font-size: 12px;
+    cursor: pointer;
+}

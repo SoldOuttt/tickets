@@ -1,0 +1,11 @@
+.ticket-container {
+  @apply w-[300px] bg-light_purple rounded-2xl p-2 relative
+}
+
+.important-info {
+  @apply font-semibold
+}
+
+.icon {
+  @apply absolute right-2 top-2 text-3xl text-red
+}

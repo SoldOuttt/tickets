@@ -1,0 +1,73 @@
+:root {
+    --primary-modal-color: black;
+    --primary-close-button-modal-color: #575757;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.212);
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    position: absolute;
+
+    top: 80px;
+
+    border: 1px solid rgb(0 0 0 / 12%);
+    border-radius: 12px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 12%), 0 0 10px rgb(0 0 0 / 6%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 400px;
+    padding: 28px 32px 24px;
+    background-color: #fff;
+
+    max-width: calc(100vw - 60px);
+    z-index: 20;
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    right: 8px;
+
+    cursor: pointer;
+}
+
+.close-button i {
+    background-color: var(--primary-close-button-modal-color);
+}
+
+.header {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+
+    color: var(--primary-modal-color);
+}
+
+.body {
+    color: var(--primary-modal-color);
+    font-size: 16px;
+}
